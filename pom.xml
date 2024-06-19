@@ -10,7 +10,10 @@
     <packaging>pom</packaging>
     <!-- 子模块 -->
     <modules>
+        <!-- 通用模块 包含实体类，服务接口工具类 -->
         <module>cloud-shopping-common</module>
+        <!-- 商品服务 -->
+        <module>cloud-shopping-goods-service</module>
     </modules>
 
     <properties>
@@ -26,6 +29,7 @@
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <lombok.version>1.18.28</lombok.version>
         <mybatis-plus.version>3.5.4</mybatis-plus.version>
+
 
     </properties>
     <!-- 依赖版本声明 -->
@@ -80,7 +84,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
         </dependencies>
 
     </dependencyManagement>
