@@ -52,8 +52,14 @@ public class RoleServiceImpl implements RoleService{
 
     }
 
+    /**
+     * 根据id查询角色，包括权限
+     * @param rid 角色id
+     * @return 执行结果
+     */
     @Override
     public Role findById(Long rid) {
+        roleMapper.findById(rid);
         return null;
     }
 
