@@ -49,9 +49,20 @@ public class RoleController {
      * @return 执行结果
      */
     @PutMapping("/update")
-    public BaseResult<Role> updateRole(@RequestBody  Role role){
+    public BaseResult updateRole(@RequestBody  Role role){
         roleService.update(role);
         return BaseResult.success("修改角色成功");
+    }
+
+    /**
+     * 根据id查询角色
+     * @param rid 角色id
+     * @return 执行结果返回
+     */
+    @GetMapping("/findById/{id}")
+    public BaseResult<Role> findById(@PathVariable(name = "id") Long rid){
+        Role role = roleService.findById(rid);
+        return BaseResult.success(role);
     }
 
 }
