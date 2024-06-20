@@ -48,7 +48,12 @@ public class RoleServiceImpl implements RoleService{
      */
     @Override
     public void delete(Long rid) {
+        // 删除角色
         roleMapper.deleteById(rid);
+        // 删除角色的所有权限
+        roleMapper.deleteRoleAllPermission(rid);
+        // 删除角色的相关表数据
+        roleMapper.deleteRoleAllAdmin(rid);
 
     }
 
@@ -59,22 +64,37 @@ public class RoleServiceImpl implements RoleService{
      */
     @Override
     public Role findById(Long rid) {
-        roleMapper.findById(rid);
-        return null;
+        return roleMapper.findById(rid);
+
     }
 
+    /**
+     * 查询所有角色
+     * @return 执行结果
+     */
     @Override
     public List<Role> findAll() {
-        return null;
+        return roleMapper.selectList(null);
     }
 
+    /**
+     * 角色分页查询
+     * @param page 页码
+     * @param size 码数
+     * @return
+     */
     @Override
     public Page<Role> search(int page, int size) {
-        return null;
+        return roleMapper.selectPage(new Page(page,size),null);
     }
 
     @Override
     public void updatePermissionToRole(Long rid, Long[] pids) {
-
+        // 删除用户的所有权限
+        roleMapper.deleteRoleAllPermission(rid);
+        for (Long pid : pids) {
+            // 添加用户权限
+            roleMapper.addPermissionToRole(rid,pid);
+        }
     }
 }
