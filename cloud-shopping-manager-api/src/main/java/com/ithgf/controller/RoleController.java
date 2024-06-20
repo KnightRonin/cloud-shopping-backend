@@ -27,7 +27,7 @@ public class RoleController {
      * @param role 角色对象
      */
     @PostMapping("/add")
-    public BaseResult addRole(Role role){
+    public BaseResult addRole(@RequestBody  Role role){
         roleService.add(role);
         return BaseResult.success("添加角色成功");
     }
@@ -43,5 +43,15 @@ public class RoleController {
         return BaseResult.success("删除角色成功");
     }
 
+    /**
+     * 修改角色
+     * @param role 角色对象
+     * @return 执行结果
+     */
+    @PutMapping("/update")
+    public BaseResult<Role> updateRole(@RequestBody  Role role){
+        roleService.update(role);
+        return BaseResult.success("修改角色成功");
+    }
 
 }
