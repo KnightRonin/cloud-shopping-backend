@@ -1,5 +1,6 @@
-package com.ithgf.result;
+package com.ithgf.exception;
 
+import com.ithgf.result.CodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

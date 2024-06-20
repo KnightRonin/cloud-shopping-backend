@@ -1,0 +1,4 @@
+#由于模块的包结构，其他模块启动时，
+#无法加载通用模块的全局异常处理类，为了让所有项目都可以加载全局异常处理类
+#添加需要的类，强制加载
+com.ithgf.exception.GlobalExceptionHandler
