@@ -34,7 +34,7 @@ public class RoleServiceImpl implements RoleService{
 
     /**
      * 根据id修改角色
-     * @param role
+     * @param role 角色对象
      */
     @Override
     public void update(Role role) {
@@ -42,8 +42,13 @@ public class RoleServiceImpl implements RoleService{
 
     }
 
+    /**
+     * 根据id删除角色
+     * @param rid 角色id
+     */
     @Override
     public void delete(Long rid) {
+        roleMapper.deleteById(rid);
 
     }
 
