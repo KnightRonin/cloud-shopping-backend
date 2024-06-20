@@ -29,7 +29,7 @@ public class RoleServiceImpl implements RoleService{
      */
     @Override
     public void add(Role role) {
-
+        roleMapper.insert(role);
     }
 
     @Override
