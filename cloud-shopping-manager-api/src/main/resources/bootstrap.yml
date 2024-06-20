@@ -1,4 +1,4 @@
-# 配置
+# 配置中心
 spring:
   profiles:
     active: dev
@@ -7,5 +7,5 @@ spring:
       config:
         server-addr: 192.168.204.10:8848
         namespace: 0ad0c249-84f3-4d28-a18f-e1946090146a
-        prefix: cloud-shopping-goods
+        prefix: cloud-shopping-manager-api
         file-extension: yaml
