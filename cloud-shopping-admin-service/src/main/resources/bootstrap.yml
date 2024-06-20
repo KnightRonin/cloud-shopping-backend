@@ -1,0 +1,11 @@
+# 配置中心
+spring:
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.204.10:8848
+        file-extension: yaml
+        namespace: 0ad0c249-84f3-4d28-a18f-e1946090146a
+        prefix: cloud-shopping-admin-service
