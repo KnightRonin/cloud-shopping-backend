@@ -21,11 +21,20 @@ import org.springframework.transaction.annotation.Transactional;
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminMapper adminMapper;
+
+    /**
+     * 新增管理员
+     * @param admin 管理员对象
+     */
     @Override
     public void add(Admin admin) {
         adminMapper.insert(admin);
     }
 
+    /**
+     * 根据修改管理员
+     * @param admin
+     */
     @Override
     public void update(Admin admin) {
         adminMapper.updateById(admin);
@@ -33,7 +42,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     /**
-     * 删除用户所有角色，在删除管理员
+     * 删除用户所有角色，再删除管理员
      * @param aid
      */
     @Override
@@ -43,11 +52,22 @@ public class AdminServiceImpl implements AdminService {
 
     }
 
+    /**
+     * 根据id查询管理员
+     * @param aid 管理员id
+     * @return
+     */
     @Override
     public Admin findById(Long aid) {
        return adminMapper.findById(aid);
     }
 
+    /**
+     * 管理员分页查询
+     * @param page 页码
+     * @param size 条数
+     * @return
+     */
     @Override
     public Page<Admin> search(int page, int size) {
         QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();
@@ -55,7 +75,11 @@ public class AdminServiceImpl implements AdminService {
 
     }
 
-    // 修改管理员角色
+    /**
+     * 修改管理员角色
+     * @param aid 管理员id
+     * @param rids 管理员角色列表
+     */
     @Override
     public void updateRoleToAdmin(Long aid, Long[] rids) {
         // 删除用户所有角色
