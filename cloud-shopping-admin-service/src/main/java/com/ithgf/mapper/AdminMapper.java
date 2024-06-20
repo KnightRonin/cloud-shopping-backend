@@ -13,4 +13,6 @@ import com.ithgf.pojo.Admin;
 public interface AdminMapper extends BaseMapper<Admin> {
     // 删除管理员的所有角色
     void deleteAdminAllRole(Long aid);
+    // 根据id查询管理员，包括权限和角色
+    Admin findById(Long aid);
 }

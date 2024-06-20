@@ -38,7 +38,7 @@ public class AdminController {
      * @return 执行结果
      */
     @PutMapping("/update")
-    public BaseResult<Admin> update(@RequestBody Admin admin){
+    public BaseResult update(@RequestBody Admin admin){
         adminService.update(admin);
         return BaseResult.success("修改管理员成功");
     }
@@ -50,11 +50,21 @@ public class AdminController {
      */
 
     @DeleteMapping("/delete/{id}")
-    public BaseResult<Admin> delete(@PathVariable(name = "id") Long aid){
+    public BaseResult delete(@PathVariable(name = "id") Long aid){
         adminService.delete(aid);
         return BaseResult.success("删除管理员成功");
     }
-    // 根据id查询管理员
+
+    /**
+     * 根据id查询管理员
+     * @param aid
+     * @return
+     */
+    @GetMapping("/findById/{id}")
+    public BaseResult<Admin> findById(@PathVariable(name = "id") Long aid){
+        Admin admin = adminService.findById(aid);
+        return BaseResult.success(admin);
+    }
     // 分页查询管理员
     // 管理员添加角色
 }

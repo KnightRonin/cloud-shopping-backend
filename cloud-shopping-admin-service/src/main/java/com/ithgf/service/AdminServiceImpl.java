@@ -43,8 +43,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin findById(Long id) {
-        return null;
+    public Admin findById(Long aid) {
+       return adminMapper.findById(aid);
     }
 
     @Override
