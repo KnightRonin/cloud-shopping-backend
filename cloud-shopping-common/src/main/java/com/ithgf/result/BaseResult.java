@@ -3,6 +3,9 @@ package com.ithgf.result;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import javax.naming.directory.SearchResult;
+import java.io.Serializable;
+
 /**
  * @Title: BaseResult
  * @Author ithgf
@@ -13,7 +16,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class BaseResult<T> {
+public class BaseResult<T> implements Serializable {
     private Integer code;
     private String message;
     private T data;
