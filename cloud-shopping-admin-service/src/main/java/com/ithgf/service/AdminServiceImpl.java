@@ -55,8 +55,14 @@ public class AdminServiceImpl implements AdminService {
 
     }
 
+    // 修改管理员角色
     @Override
     public void updateRoleToAdmin(Long aid, Long[] rids) {
-
+        // 删除用户所有角色
+        adminMapper.deleteAdminAllRole(aid);
+        // 添加角色
+        for (Long rid : rids) {
+            adminMapper.addRoleToAdmin(aid,rid);
+        }
     }
 }

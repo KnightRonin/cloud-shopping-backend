@@ -2,6 +2,7 @@ package com.ithgf.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ithgf.pojo.Admin;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Title: AdminMapper
@@ -15,4 +16,7 @@ public interface AdminMapper extends BaseMapper<Admin> {
     void deleteAdminAllRole(Long aid);
     // 根据id查询管理员，包括权限和角色
     Admin findById(Long aid);
+
+    // 添加j角色
+    void addRoleToAdmin(@Param("aid") Long aid,@Param("rid") Long rid);
 }

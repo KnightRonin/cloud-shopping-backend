@@ -26,8 +26,8 @@ public class BrandController {
 
     /**
      * 根据id查询品牌
-     * @param id
-     * @return
+     * @param id 品牌id
+     * @return 执行结果
      */
     @GetMapping("/findById/{id}")
     public BaseResult<Brand> findById(@PathVariable(name = "id") Long id){

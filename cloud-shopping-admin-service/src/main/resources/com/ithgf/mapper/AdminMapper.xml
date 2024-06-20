@@ -33,4 +33,8 @@
                  LEFT JOIN shop_permission ON shop_role_permission.pid = shop_permission.pid
         WHERE shop_admin.aid = #{aid}
     </select>
+    <!-- 修改管理员角色 -->
+    <insert id="addRoleToAdmin">
+        insert into shop_admin_role values (#{aid},#{rid});
+    </insert>
 </mapper>

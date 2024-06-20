@@ -59,8 +59,8 @@ public class AdminController {
 
     /**
      * 根据id查询管理员
-     * @param aid
-     * @return
+     * @param aid 管理员ID
+     * @return 执行结果
      */
     @GetMapping("/findById/{id}")
     public BaseResult<Admin> findById(@PathVariable(name = "id") Long aid){
@@ -82,5 +82,16 @@ public class AdminController {
 
     }
 
-    // 管理员添加角色
+    /**
+     * 管理员添加角色
+     * @param aid 用户id
+     * @param rids 角色Id
+     * @return 执行结果
+     */
+    @PutMapping("/addRoleToAdmin")
+
+    public BaseResult addRoleToAdmin(Long aid, Long[] rids){
+        adminService.updateRoleToAdmin(aid , rids);
+        return BaseResult.success();
+    }
 }
