@@ -15,7 +15,6 @@ import java.io.Serializable;
  * @description: 收货地址
  */
 @Data
-@TableName("shop_address")
 public class Address implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id; //地址id

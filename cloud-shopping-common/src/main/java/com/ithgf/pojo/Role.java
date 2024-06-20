@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  * @description: 后台管理员角色
  */
 @Data
-public class Role {
+public class Role implements Serializable {
     @TableId
     private Long rid; // 角色id
     private String roleName; // 角色名

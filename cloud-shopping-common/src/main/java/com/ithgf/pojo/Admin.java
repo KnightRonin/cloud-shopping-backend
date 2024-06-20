@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  * @description: 后台管理员用户
  */
 @Data
-public class Admin {
+public class Admin implements Serializable {
     @TableId
     private Long aid; // 用户id
     private String username; // 用户名

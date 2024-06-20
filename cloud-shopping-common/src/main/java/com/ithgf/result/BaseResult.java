@@ -2,6 +2,7 @@ package com.ithgf.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.naming.directory.SearchResult;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class BaseResult<T> implements Serializable {
     private Integer code;
     private String message;
@@ -29,6 +31,8 @@ public class BaseResult<T> implements Serializable {
     public static <T> BaseResult<T> success(T data){
         return new BaseResult<T>(CodeEnum.SUCCESS.getCode(), CodeEnum.SUCCESS.getMessage(),data);
     }
-
+    public static <T> BaseResult<T> success(String message){
+        return new BaseResult<>(CodeEnum.SUCCESS.getCode(), message,null);
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.ithgf;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -20,8 +21,10 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @EnableDubbo
 @RefreshScope
 @MapperScan("com.ithgf.mapper")
-public class AdminApplication {
+@Slf4j
+public class AdminServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AdminApplication.class,args);
+        SpringApplication.run(AdminServiceApplication.class,args);
+        log.info("**************** AdminService服务启动成功 ***************");
     }
 }

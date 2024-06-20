@@ -16,6 +16,8 @@
         <module>cloud-shopping-goods-service</module>
         <!-- 管理员api -->
         <module>cloud-shopping-manager-api</module>
+        <!-- 管理员服务模块 -->
+        <module>cloud-shopping-admin-service</module>
     </modules>
 
     <properties>
@@ -96,6 +98,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
+
 
     </dependencies>
     <!-- 插件 -->
