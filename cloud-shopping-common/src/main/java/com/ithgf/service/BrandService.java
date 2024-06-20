@@ -10,5 +10,6 @@ import com.ithgf.pojo.Brand;
  * @description: 品牌服务
  */
 public interface BrandService {
+    // 根据id查询品牌
     Brand findById(Long id);
 }

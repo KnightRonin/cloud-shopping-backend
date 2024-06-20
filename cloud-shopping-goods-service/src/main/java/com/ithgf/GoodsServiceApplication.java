@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @SpringBootApplication
 @EnableDiscoveryClient // 向注册中心注册服务
-@EnableDubbo
+@EnableDubbo // 生产者开启dubbo
 @RefreshScope //配置动态刷新
 @MapperScan("com.ithgf.mapper")
 public class GoodsServiceApplication {
