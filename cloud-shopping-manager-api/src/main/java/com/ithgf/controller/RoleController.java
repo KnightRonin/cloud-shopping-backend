@@ -69,4 +69,40 @@ public class RoleController {
         return BaseResult.success(role);
     }
 
+
+    /**
+     * 查询所有角色
+     * @return 执行结果
+     */
+    @GetMapping("/findAll")
+    public BaseResult<List<Role>> findAllRole(){
+        List<Role> roles = roleService.findAll();
+        return BaseResult.success(roles);
+    }
+
+    /**
+     * 分页查询角色
+     * @param page 页码
+     * @param size 每页条数
+     * @return 执行结果
+     */
+    @GetMapping("/search")
+    public BaseResult<Page<Role>> search(int page, int size){
+        Page<Role> search = roleService.search(page, size);
+        return BaseResult.success(search);
+    }
+
+
+    /**
+     * 修改用户的权限
+     * @param rid 角色id
+     * @param pids 权限
+     * @return 执行结果
+     */
+    @PutMapping("/updatePermissionToRole")
+    public BaseResult updatePermissionToRole(@Param("rid") Long rid,@Param("pids") Long[] pids){
+        roleService.updatePermissionToRole(rid, pids);
+        return BaseResult.success("用户角色添加成功");
+    }
+
 }
