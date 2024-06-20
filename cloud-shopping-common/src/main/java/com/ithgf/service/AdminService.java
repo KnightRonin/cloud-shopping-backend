@@ -18,7 +18,7 @@ public interface AdminService {
     // 删除管理员
     void delete(Long id);
     // 根据id查询管理员
-    void findById(Long id);
+    Admin findById(Long id);
     // 分页查询管理员
     Page<Admin> search(int page, int size);
     // 修改管理员角色
