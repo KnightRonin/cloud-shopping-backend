@@ -42,7 +42,18 @@ public class AdminController {
         adminService.update(admin);
         return BaseResult.success("修改管理员成功");
     }
-    // 删除管理员
+
+    /**
+     *  删除管理员
+     * @param aid 管理员id
+     * @return 执行结果
+     */
+
+    @DeleteMapping("/delete/{id}")
+    public BaseResult<Admin> delete(@PathVariable(name = "id") Long aid){
+        adminService.delete(aid);
+        return BaseResult.success("删除管理员成功");
+    }
     // 根据id查询管理员
     // 分页查询管理员
     // 管理员添加角色

@@ -27,11 +27,18 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void update(Admin admin) {
+        adminMapper.updateById(admin);
 
     }
 
+    /**
+     * 删除用户所有角色，在删除管理员
+     * @param aid
+     */
     @Override
-    public void delete(Long id) {
+    public void delete(Long aid) {
+        adminMapper.deleteAdminAllRole(aid);
+        adminMapper.deleteById(aid);
 
     }
 
