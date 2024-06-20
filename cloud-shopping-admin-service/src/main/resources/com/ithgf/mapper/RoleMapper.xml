@@ -21,4 +21,18 @@
                  LEFT JOIN shop_permission ON shop_role_permission.pid = shop_permission.pid
         WHERE shop_role.rid = #{rid}
     </select>
+    <!-- 删除角色所有权限 -->
+    <delete id="deleteRoleAllPermission" parameterType="long">
+        delete from shop_role_permission where rid = #{rid}
+    </delete>
+
+    <!-- 删除角色的用户的相关数据 -->
+    <delete id="deleteRoleAllAdmin" parameterType="long">
+        delete from shop_admin_role where rid = #{rid}
+    </delete>
+
+    <!-- 给角色添加权限 -->
+    <insert id="addPermissionToRole" parameterType="long">
+        insert into shop_role_permission values (#{rid},#{pid})
+    </insert>
 </mapper>

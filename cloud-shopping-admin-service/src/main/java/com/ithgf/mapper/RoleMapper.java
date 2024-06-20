@@ -19,5 +19,5 @@ public interface RoleMapper extends BaseMapper<Role> {
     // 删除用户_角色表的相关数据
     void deleteRoleAllAdmin(Long rid);
     // 给角色添加权限
-    void addPermissionToRole(@Param("rid") Long rid, @Param("pids") Long[] pids);
+    void addPermissionToRole(@Param("rid") Long rid, @Param("pid") Long pid);
 }
