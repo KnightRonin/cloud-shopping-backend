@@ -9,7 +9,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @Title: AdminController
+ * @Title: 后台管理
  * @Author ithgf
  * @Package com.ithgf.controller
  * @Date 2024/6/20 17:24
@@ -24,7 +24,7 @@ public class AdminController {
     private AdminService adminService;
 
     /**
-     * 添加管理员
+     * 新增管理员
      * @param admin 管理员对象
      * @return 执行结果
      */
@@ -35,7 +35,7 @@ public class AdminController {
     }
 
     /**
-     *  根据ID修改管理员
+     *  修改管理员
      * @param admin 管理员对象
      * @return 执行结果
      */
@@ -83,7 +83,7 @@ public class AdminController {
     }
 
     /**
-     * 管理员添加角色
+     * 修改管理员角色
      * @param aid 用户id
      * @param rids 角色Id
      * @return 执行结果
