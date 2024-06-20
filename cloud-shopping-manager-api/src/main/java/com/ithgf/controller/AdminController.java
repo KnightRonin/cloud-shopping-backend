@@ -1,6 +1,8 @@
 package com.ithgf.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ithgf.pojo.Admin;
+import com.ithgf.pojo.Permission;
 import com.ithgf.result.BaseResult;
 import com.ithgf.service.AdminService;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -65,6 +67,20 @@ public class AdminController {
         Admin admin = adminService.findById(aid);
         return BaseResult.success(admin);
     }
-    // 分页查询管理员
+
+    /**
+     *  分页查询管理员
+     * @param page 页码
+     * @param size 每页条数
+     * @return 执行结果
+     */
+
+    @GetMapping("/search")
+    public BaseResult<Page<Admin>> search(int page, int size){
+        Page<Admin> pageSearch = adminService.search(page, size);
+        return BaseResult.success(pageSearch);
+
+    }
+
     // 管理员添加角色
 }

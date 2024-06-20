@@ -1,5 +1,6 @@
 package com.ithgf.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ithgf.mapper.AdminMapper;
 import com.ithgf.pojo.Admin;
@@ -49,7 +50,9 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Page<Admin> search(int page, int size) {
-        return null;
+        QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();
+        return adminMapper.selectPage(new Page<>(page, size), null);
+
     }
 
     @Override
