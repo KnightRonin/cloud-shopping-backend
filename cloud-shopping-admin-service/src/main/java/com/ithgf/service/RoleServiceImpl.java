@@ -32,8 +32,13 @@ public class RoleServiceImpl implements RoleService{
         roleMapper.insert(role);
     }
 
+    /**
+     * 根据id修改角色
+     * @param role
+     */
     @Override
     public void update(Role role) {
+        roleMapper.updateById(role);
 
     }
 
